@@ -21,7 +21,7 @@ export default function AppHeader() {
   const [select, setSelect] = useState(false);
   const [modal, setModal] = useState(false);
   const [coin, setCoin] = useState(null)
-  const [drawer, setDrawer] = useState(true)
+  const [drawer, setDrawer] = useState(false)
 
   useEffect(() => {
      const keypress = (event) => {
@@ -48,7 +48,7 @@ export default function AppHeader() {
          open={select} 
          onSelect={handleSelect} 
          onClick={()=> setSelect((prev) => !prev)}
-         value='press / to open'
+         value='Press to open'
          optionLabelProp="label"
          options={crypto.map((coin) => ({
             label: coin.name, 
