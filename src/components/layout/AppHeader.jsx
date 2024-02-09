@@ -21,7 +21,7 @@ export default function AppHeader() {
   const [select, setSelect] = useState(false);
   const [modal, setModal] = useState(false);
   const [coin, setCoin] = useState(null)
-  const [drawer, setDrawer] = useState(false)
+  const [drawer, setDrawer] = useState(true)
 
   useEffect(() => {
      const keypress = (event) => {
@@ -65,7 +65,7 @@ export default function AppHeader() {
                 {option.data.label}
             </Space>
         )}
-  />
+        />
         <Button type="primary" onClick={() => setDrawer(true)}>
            Add Asset
          </Button>
@@ -83,6 +83,8 @@ export default function AppHeader() {
           title="Add Asset" 
           onClose={() => setDrawer(false)} 
           open={drawer}
+          destroyOnClose
+          
          >
             <AddAssetForm onClose={() => setDrawer(false)} />
       </Drawer>
