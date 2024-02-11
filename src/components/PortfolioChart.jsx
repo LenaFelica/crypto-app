@@ -8,11 +8,11 @@ export default function PortfolioChart() {
 const { assets } = useCrypto()
 
 const data = {
-      labels: assets.map(a => a.name),
+      labels: assets.map((a) => a.name),
       datasets: [
         {
-          label: "# of Votes",
-          data: [12, 19, 3, 5, 2, 3],
+          label: "$",
+          data: assets.map((a) => a.totalAmount),
           backgroundColor: [
             "rgba(255, 99, 132, 1)",
             "rgba(54, 162, 235, 1)",
